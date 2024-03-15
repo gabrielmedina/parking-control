@@ -28,6 +28,11 @@ public class ParkingSpotService {
         return parkingSpotRepository.findById(id);
     }
 
+    @Transactional
+    public void delete(ParkingSpotModel parkingSpotModel) {
+        parkingSpotRepository.delete(parkingSpotModel);
+    }
+
     public boolean existsByCarLicensePlate(String carLicensePlate) {
         return parkingSpotRepository.existsByCarLicensePlate(carLicensePlate);
     }
